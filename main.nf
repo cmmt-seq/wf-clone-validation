@@ -61,7 +61,7 @@ process checkIfEnoughReads {
         path("${meta.alias}.fastcat_stats"), emit: stats
         tuple val(meta.alias), env(STATUS), emit: status
     script:
-        int min_read_length = params.large_construct ? 200 : meta.approx_size * 0.5
+        int min_read_length = params.large_construct ? 200 : meta.approx_size * 1.05
         int max_read_length = meta.approx_size * 1.5
         def extra_args = "-a $min_read_length -b $max_read_length"
         def expected_depth = "$params.assm_coverage"

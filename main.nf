@@ -341,7 +341,7 @@ process assemblyMafs {
     // from default of 1000 to 10.
     """
     lastdb db.lastdb "assembly.fasta"
-    lastal -m 10000 -w 10 db.lastdb "assembly.fasta" > "${meta.alias}.assembly.maf"
+    lastal -m 5000 -w 50 db.lastdb "assembly.fasta" > "${meta.alias}.assembly.maf"
   
     """
 }
